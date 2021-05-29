@@ -1,0 +1,14 @@
+# Dolibarr language file - fr_FR - extendedaccountancy
+CHARSET=UTF-8
+Module163054Name = Comptabilité étendue
+Module163054Desc = Module spécifique pour étendre les fonctionnalités comptables
+
+#######################################################################
+# Configuration admin
+#######################################################################
+extendedaccountancySetup = Configuration du module comptabilité étendue
+
+#######################################################################
+# Dictionnaire
+#######################################################################
+TypeTransaction = Type transaction

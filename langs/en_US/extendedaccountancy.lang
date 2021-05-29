@@ -1,0 +1,14 @@
+# Dolibarr language file - fr_FR - extendedaccountancy
+CHARSET=UTF-8
+Module163054Name = Extended accountancy
+Module163054Desc = Specific module for extend accountancy functionnality
+
+#######################################################################
+# Configuration admin
+#######################################################################
+extendedaccountancySetup = Setup module extended accountancy
+
+#######################################################################
+# Dictionnaire
+#######################################################################
+TypeTransaction = Transaction type
