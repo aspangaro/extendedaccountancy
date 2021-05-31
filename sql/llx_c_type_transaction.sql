@@ -16,14 +16,10 @@
 --
 -- ============================================================================
 
-CREATE TABLE `llx_c_type_transaction`(
+CREATE TABLE llx_c_type_transaction(
     rowid			integer      AUTO_INCREMENT PRIMARY KEY,
     code			varchar(12)  NOT NULL,
     label			varchar(32),
     active          tinyint DEFAULT 1  NOT NULL,
     entity          integer  DEFAULT 1 NOT NULL
-)ENGINE=innodb DEFAULT CHARSET=utf8;
-
-ALTER TABLE llx_c_type_transaction ADD UNIQUE INDEX uk_c_type_transaction(code);
-
-INSERT INTO llx_c_type_transaction (code, label, active) values ('STANDARD', 'Standard', 1);
+)ENGINE=innodb;
