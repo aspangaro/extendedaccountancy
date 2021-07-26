@@ -70,7 +70,7 @@ class modextendedaccountancy extends DolibarrModules
 		$this->editor_url = 'http://www.open-dsi.fr';
 		
 		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
-		$this->version = '14.0.0';
+		$this->version = '15.0.0';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.
@@ -156,7 +156,9 @@ class modextendedaccountancy extends DolibarrModules
 		// 'stock'            to add a tab in stock view
 		// 'thirdparty'       to add a tab in third party view
 		// 'user'             to add a tab in user view
-        $this->tabs = array();
+        $this->tabs = array(
+            'product:+accountancy:Accountancy:@extendedaccountancy:$user->rights->extendedaccountancy->read:/extendedaccountancy/card.php?pid=__ID__',
+        );
 
 		if (! isset($conf->extendedaccountancy) || ! isset($conf->extendedaccountancy->enabled))
         {
