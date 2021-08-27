@@ -120,7 +120,7 @@ class modextendedaccountancy extends DolibarrModules
 		$this->requiredby = array();	// List of modules id to disable if this one is disabled
 		$this->conflictwith = array();	// List of modules id this module is in conflict with
 		$this->phpmin = array(5,6);					// Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(5,0);	// Minimum version of Dolibarr required by module
+		$this->need_dolibarr_version = array(14,0);	// Minimum version of Dolibarr required by module
 		$this->langfiles = array("extendedaccountancy@extendedaccountancy", "opendsi@extendedaccountancy");
         $langs->load('extendedaccountancy@extendedaccountancy');
 
@@ -157,7 +157,7 @@ class modextendedaccountancy extends DolibarrModules
 		// 'thirdparty'       to add a tab in third party view
 		// 'user'             to add a tab in user view
         $this->tabs = array(
-            'product:+accountancy:Accountancy:@extendedaccountancy:$user->rights->extendedaccountancy->read:/extendedaccountancy/card.php?pid=__ID__',
+            'product:+extendedaccountancy:Accountancy:extendedaccountancy@extendedaccountancy:$user->rights->extendedaccountancy->read:/extendedaccountancy/product_tab.php?id=__ID__',
         );
 
 		if (! isset($conf->extendedaccountancy) || ! isset($conf->extendedaccountancy->enabled))
@@ -216,16 +216,14 @@ class modextendedaccountancy extends DolibarrModules
 
 		// Permissions
 		$this->rights = array();		// Permission array used by this module
-		$r=0;
+        $r=0;
 
-		// Add here list of permission defined by an id, a label, a boolean and two constant strings.
-		// Example:
-		// $this->rights[$r][0] = $this->numero + $r;	// Permission id (must not be already used)
-		// $this->rights[$r][1] = 'Permision label';	// Permission label
-		// $this->rights[$r][3] = 1; 					// Permission by default for new user (0/1)
-		// $this->rights[$r][4] = 'level1';				// In php code, permission will be checked by test if ($user->rights->permkey->level1->level2)
-		// $this->rights[$r][5] = 'level2';				// In php code, permission will be checked by test if ($user->rights->permkey->level1->level2)
-		// $r++;
+        $this->rights[$r][0] = 1630541;
+        $this->rights[$r][1] = $langs->trans('ExtendedAccountancyTabRead');
+        $this->rights[$r][3] = 1;
+        $this->rights[$r][4] = 'read';
+        $this->rights[$r][5] = '';
+        $r++;
 
 		// Main menu entries
 		$this->menu = array();			// List of menus to add
